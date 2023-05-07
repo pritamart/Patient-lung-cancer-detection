@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Lung cancer </title>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+</head>
+
+<body>
+<div class="container">
+  <div class="login">
+    
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <h3>Patient lung cancer Prediction</h3>
+
+     <form action="{{ url_for('predict')}}"method="post" class="input1">
+           <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input type="text" class="form-control" id="firstName" placeholder="Enter first name" required="required">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input type="text" class="form-control" id="lastName" placeholder="Enter last name" required="required" >
+    </div>
+
+          <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" class="form-control" id="age" placeholder="Enter age" name="age"  required="required">
+    </div>
+
+    <div class="form-group">
+      <label for="smokes">Smokes:</label>
+      <input type="number" class="form-control" id="smokes" placeholder="Enter number of cigarettes per day" name="smokes"  required="required">
+    </div>
+    <div class="form-group">
+      <label for="areaQ">Area Q:</label>
+      <input type="number" class="form-control" id="areaQ" placeholder="Enter area Q" name="areaQ"  required="required">
+    </div>
+    <div class="form-group">
+      <label for="alkhol">Alcohol:</label>
+      <input type="number" class="form-control" id="alkhol" placeholder="Enter number of alcoholic drinks per week" name="alkhol"  required="required">
+    </div>
+<!-- <input type="submit" value="Submit"> -->
+    
+      <center>
+    <button type="submit" class="btn btn-primary">Predict</button>
+      </center>
+    </form>
+   <center>
+   <h3>{{ prediction_text }}</h3>
+   </center>
+
+ </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
